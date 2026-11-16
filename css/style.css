@@ -297,7 +297,13 @@ html:not(.js) .hero__hint { display: none; } /* the lens needs JS, so don't adve
 }
 .work.is-horizontal .work__intro { width: min(46vw, 760px); height: calc(var(--mh) + 96px); flex: none; }
 .work.is-horizontal .work__cue { display: block; margin-top: 8px; }
-.work.is-horizontal .card { flex: none; width: calc(var(--mh) * 1.2785); }
+/* Width follows the cover's shape, but never gets so narrow that the caption wraps into a tall column. */
+.work.is-horizontal .card { flex: none; width: max(calc(var(--mh) * 1.2785), 470px); }
+@media (max-height: 760px) {
+  .work.is-horizontal .card__info { padding-top: 14px; row-gap: 9px; }
+  .work.is-horizontal .card__title { font-size: clamp(22px, 2vw, 28px); }
+  .work.is-horizontal .card__desc { margin-top: 6px; font-size: 14px; }
+}
 .work.is-horizontal .card__media { height: var(--mh); aspect-ratio: auto; }
 .work.is-horizontal .card__media img { width: 112%; max-width: none; margin-left: -6%; transform: translateX(var(--px, 0px)); transition: filter .5s; }
 .work.is-horizontal .card:hover .card__media img { transform: translateX(var(--px, 0px)); filter: brightness(1.08); }
@@ -313,6 +319,8 @@ html:not(.js) .hero__hint { display: none; } /* the lens needs JS, so don't adve
 .work__bar i { position: absolute; inset: -1px 0 -1px 0; background: var(--fg); transform: scaleX(var(--wp, 0)); transform-origin: 0 50%; }
 
 :root[data-mode="dev"] .card__media { background: var(--blue); border: 1px solid #fff; border-radius: 0; }
+/* Monospace runs wider, so give Dev-mode captions a smaller size and one more line before truncating. */
+:root[data-mode="dev"] .work.is-horizontal .card__desc { font-size: 13px; -webkit-line-clamp: 4; }
 :root[data-mode="dev"] .card__media img,
 :root[data-mode="dev"] .row__thumb,
 :root[data-mode="dev"] .preview img { filter: grayscale(1) contrast(1.15); mix-blend-mode: luminosity; }

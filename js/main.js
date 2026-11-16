@@ -396,12 +396,29 @@
         section.classList.toggle('is-horizontal', enabled);
         if (!enabled) { section.style.height = ''; track.style.transform = ''; cards.forEach((c) => c.style.removeProperty('--px')); }
       }
-      if (!enabled) return;
+      if (!enabled) { section.style.removeProperty('--mh'); return; }
+      fitCovers();
       distance = Math.max(0, track.scrollWidth - innerWidth);
       section.style.height = `${distance + innerHeight}px`;
     }
 
+    // Size the covers so the tallest caption (title, text, tags) still clears the progress bar.
+    // A smaller cover makes the card narrower, which can wrap the caption further, so step down until it fits.
+    function fitCovers() {
+      const top = parseFloat(getComputedStyle(track).paddingTop) || 0;
+      const reserve = 62; // progress bar plus breathing room above it
+      let mh = clamp(innerHeight - top - reserve - 110, 200, 620);
+      for (let i = 0; i < 10; i++) {
+        section.style.setProperty('--mh', mh + 'px');
+        const tallest = Math.max(...cards.map((c) => $('.card__info', c).offsetHeight));
+        const fits = Math.floor(innerHeight - top - reserve - tallest);
+        if (fits >= mh || mh <= 200) break;
+        mh = Math.max(200, fits);
+      }
+    }
+
     measure();
+    modeListeners.push(() => measure()); // Dev mode swaps the body font, so captions reflow
     // Keyboard users: bring a focused card into view by scrolling the page to its position.
     cards.concat($$('.orb', track)).forEach((el) => {
       el.addEventListener('focus', () => {
