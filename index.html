@@ -241,7 +241,7 @@
         <div class="about__grid">
           <figure class="about__photos" data-reveal data-spec="figure · 4:5">
             <div class="about__photo about__photo--main"><img src="assets/about/gallery.webp" width="960" height="1200" loading="lazy" alt="Adarsh standing in a dim gallery, looking at framed drawings on the wall"></div>
-            <div class="about__photo about__photo--face"><img src="assets/about/portrait.webp" width="400" height="500" loading="lazy" alt="Adarsh Bhatt, smiling"></div>
+            <div class="about__photo about__photo--face"><img src="assets/about/portrait.webp" width="600" height="900" loading="lazy" alt="Adarsh Bhatt smiling at a restaurant table, arms folded, in a grey hoodie"></div>
             <figcaption>Off the clock, usually looking at someone else’s work.</figcaption>
           </figure>
 
@@ -381,10 +381,10 @@
           </ul>
         </div>
 
-        <!-- Messages go through Web3Forms. Paste the access key from web3forms.com into data-access-key.
-             While it is empty, the form opens the visitor's email app with the message filled in. -->
+        <!-- Messages go through Web3Forms. data-access-key is a public key (safe to show in HTML).
+             If it is ever empty, the form opens the visitor's email app with the message filled in. -->
         <form class="form" id="contact-form" data-reveal data-spec="form"
-              data-access-key="" data-to="adi.bhatt2004@gmail.com">
+              data-access-key="b2680a87-f570-4d3d-8313-480ce6e83d8c" data-to="adi.bhatt2004@gmail.com">
           <div class="field">
             <label for="cf-name">Your name</label>
             <input id="cf-name" name="name" type="text" autocomplete="name" required maxlength="100">
