@@ -1,0 +1,16 @@
+# Private documents: phone number, date of birth, home address, student ID. Never publish.
+*.pdf
+
+# Original photos. Only the cropped copies in assets/about/ are used on the site.
+image/
+
+# Original cover downloads. The site uses the .webp copies.
+# bachat.jpg stays because link previews (og:image) need a JPEG.
+assets/work/*.png
+assets/work/*.jpg
+!assets/work/bachat.jpg
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+.vscode/

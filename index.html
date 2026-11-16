@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en" data-mode="design">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Adarsh Bhatt — UI/UX &amp; Brand Designer</title>
+  <meta name="description" content="Portfolio of Adarsh Bhatt, a UI/UX and brand designer studying Computer Science & Design at IIIT Delhi.">
+  <meta name="theme-color" content="#0A0A0B">
+  <meta property="og:title" content="Adarsh Bhatt — UI/UX & Brand Designer">
+  <meta property="og:description" content="Design student at IIIT Delhi. Interfaces, brands and the code behind them.">
+  <meta property="og:type" content="website">
+  <!-- If the site moves to another address, update these three URLs. -->
+  <link rel="canonical" href="https://bakachan04.github.io/adarshbhatt/">
+  <meta property="og:url" content="https://bakachan04.github.io/adarshbhatt/">
+  <meta property="og:image" content="https://bakachan04.github.io/adarshbhatt/assets/work/bachat.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Person","name":"Adarsh Bhatt","jobTitle":"UI/UX & Brand Designer","address":{"@type":"PostalAddress","addressLocality":"New Delhi","addressCountry":"IN"},"alumniOf":"Indraprastha Institute of Information Technology, Delhi","sameAs":["https://www.behance.net/adarshbhatt","https://www.linkedin.com/in/adarsh-bhatt-026078219/","https://github.com/Bakachan04"]}
+  </script>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231A44FF'/%3E%3Ctext x='32' y='43' font-family='Arial Black,Arial,sans-serif' font-weight='900' font-size='28' text-anchor='middle' fill='%23fff'%3EAB%3C/text%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    // Mark JS as available and restore the saved mode before first paint.
+    document.documentElement.classList.add('js');
+    try { if (localStorage.getItem('ab-mode') === 'dev') document.documentElement.dataset.mode = 'dev'; } catch (e) {}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#work">Skip to work</a>
+  <div class="progress" aria-hidden="true"></div>
+
+  <!-- Layout grid shown in Dev mode -->
+  <div class="gridlines" aria-hidden="true">
+    <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+  </div>
+
+  <!-- ============ NAV ============ -->
+  <nav class="nav" aria-label="Primary">
+    <a class="nav__logo pill" href="#top" aria-label="Adarsh Bhatt, back to top" data-magnetic>AB<span>®</span></a>
+
+    <div class="nav__links pill">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <div class="nav__right">
+      <button class="mode pill" type="button" role="switch" aria-checked="false"
+              aria-label="Dev mode: show how this page is built" title="Toggle Dev mode (press D)" data-mode-toggle>
+        <span class="mode__opt" data-opt="design">Design</span>
+        <span class="mode__opt" data-opt="dev">&lt;/&gt; Dev</span>
+      </button>
+      <button class="nav__menu pill" type="button" aria-expanded="false" aria-controls="menu" data-menu-toggle>Menu</button>
+    </div>
+  </nav>
+
+  <div class="menu" id="menu" hidden>
+    <a href="#work"><span>01</span>Work</a>
+    <a href="#about"><span>02</span>About</a>
+    <a href="#experience"><span>03</span>Experience</a>
+    <a href="#contact"><span>04</span>Contact</a>
+  </div>
+
+  <!-- ============ HERO ============ -->
+  <header class="hero" id="top">
+    <div class="hero__layer hero__layer--surface is-solid">
+      <div class="hero__meta">
+        <span>Portfolio — 2026</span>
+        <span class="hero__hint hero__hint--fine">Move the lens · hold to X-ray</span>
+        <span class="hero__hint hero__hint--coarse">Tap anywhere to move the lens</span>
+        <span class="hero__meta-right">UI/UX · Branding · Motion · Front-end</span>
+      </div>
+
+      <h1 class="hero__name" aria-label="Adarsh Bhatt">
+        <span class="hero__line" aria-hidden="true"><span class="w w--name">Adarsh</span></span>
+        <span class="hero__line hero__line--2" aria-hidden="true">
+          <span class="w hero__tag">Designer<br>who codes</span>
+          <span class="w w--name">Bhatt</span>
+        </span>
+      </h1>
+
+      <div class="hero__foot">
+        <p class="hero__intro">Design student at IIIT Delhi, studying Computer Science &amp; Design. I make interfaces that are clear and easy to use, then build them.</p>
+        <p class="hero__status">
+          <span class="dot" aria-hidden="true"></span>Available for freelance
+          <span class="hero__place">New Delhi, <span data-clock>--:--</span> IST</span>
+        </p>
+        <a class="hero__scroll" href="#work">Scroll <span aria-hidden="true">↓</span></a>
+      </div>
+    </div>
+    <!-- .hero__layer--under and the lens are created in main.js -->
+  </header>
+
+  <!-- ============ MARQUEE ============ -->
+  <div class="marquee t-blue" aria-hidden="true">
+    <div class="marquee__track">
+      <div class="marquee__group">
+        <span>UI/UX Design</span><b>✦</b><span>Branding</span><b>✦</b><span>Motion Graphics</span><b>✦</b><span>Logo Design</span><b>✦</b><span>Typography</span><b>✦</b><span>Front-end</span><b>✦</b>
+      </div>
+      <div class="marquee__group">
+        <span>UI/UX Design</span><b>✦</b><span>Branding</span><b>✦</b><span>Motion Graphics</span><b>✦</b><span>Logo Design</span><b>✦</b><span>Typography</span><b>✦</b><span>Front-end</span><b>✦</b>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- ============ SELECTED WORK ============ -->
+    <section class="work t-dark" id="work" aria-labelledby="work-title">
+      <div class="work__pin">
+        <div class="work__track">
+
+          <div class="work__intro">
+            <p class="label">(01) Selected work</p>
+            <h2 class="display" id="work-title" data-spec="h2 · Bricolage 800">Selected <em>work</em></h2>
+            <p class="work__lede">Three apps, seven book covers and one game, from research to final screens. Each opens as a full case study on Behance.</p>
+            <p class="work__cue" aria-hidden="true">Keep scrolling <span>→</span></p>
+          </div>
+
+          <a class="card" href="https://www.behance.net/gallery/252605833/Bachat-AI-UIUX-Branding" target="_blank" rel="noopener" data-cursor="view" data-spec="card / 01">
+            <div class="card__media"><img src="assets/work/bachat.webp" width="808" height="632" alt="Bachat AI budgeting app home screen on a phone held out against a blue background"></div>
+            <div class="card__info">
+              <span class="card__no">01</span>
+              <div class="card__text">
+                <h3 class="card__title">Bachat AI</h3>
+                <p class="card__desc">A privacy-first budgeting app for students. AI sorts every expense into a category and flags unusual spending, while all the data stays on the phone. Shaped by a survey of 47 students.</p>
+              </div>
+              <ul class="card__tags"><li>UI/UX</li><li>Branding</li><li>Figma</li><li>2025</li></ul>
+            </div>
+          </a>
+
+          <a class="card" href="https://www.behance.net/gallery/232119185/Bites-Branding-UIUX" target="_blank" rel="noopener" data-cursor="view" data-spec="card / 02">
+            <div class="card__media"><img src="assets/work/bites.webp" width="808" height="632" loading="lazy" alt="Bites food delivery app on a phone resting on concrete, with the Bites wordmark behind it"></div>
+            <div class="card__info">
+              <span class="card__no">02</span>
+              <div class="card__text">
+                <h3 class="card__title">Bites</h3>
+                <p class="card__desc">Food delivery for the IIIT Delhi campus: every canteen and snack stall in one app, with one-tap ordering and live tracking. Built on a campus survey and interviews with a student, a vendor and a delivery person.</p>
+              </div>
+              <ul class="card__tags"><li>Branding</li><li>UI/UX</li><li>2025</li></ul>
+            </div>
+          </a>
+
+          <a class="card" href="https://www.behance.net/gallery/202674075/Eduvid-Branding-UIUX" target="_blank" rel="noopener" data-cursor="view" data-spec="card / 03">
+            <div class="card__media"><img src="assets/work/eduvid.webp" width="808" height="632" loading="lazy" alt="Eduvid splash screen with a yellow and white logo on a dark phone mockup"></div>
+            <div class="card__info">
+              <span class="card__no">03</span>
+              <div class="card__text">
+                <h3 class="card__title">Eduvid</h3>
+                <p class="card__desc">One home for study material. Notes, videos, slides and PDFs sit in a single searchable library, with AI summaries and flashcards. A black-and-yellow identity carried through every screen.</p>
+              </div>
+              <ul class="card__tags"><li>Branding</li><li>UI/UX</li><li>Figma</li><li>2024</li></ul>
+            </div>
+          </a>
+
+          <a class="card" href="https://www.behance.net/gallery/124344065/Harry-Potter-Design-Revamp-UIUX-and-Video" target="_blank" rel="noopener" data-cursor="view" data-spec="card / 04">
+            <div class="card__media"><img src="assets/work/harry.webp" width="808" height="632" loading="lazy" alt="Redesigned coral-red Harry Potter and the Philosopher's Stone book cover held open"></div>
+            <div class="card__info">
+              <span class="card__no">04</span>
+              <div class="card__text">
+                <h3 class="card__title">Harry Potter Design Revamp</h3>
+                <p class="card__desc">All seven books redesigned, each with one symbol and one colour. The system extends to page layouts, merchandise and a reader’s website with a library, community and shop.</p>
+              </div>
+              <ul class="card__tags"><li>Book design</li><li>UI/UX</li><li>Video</li><li>2021</li><li>Team project</li></ul>
+            </div>
+          </a>
+
+          <a class="card" href="https://www.behance.net/gallery/156835109/Final-Fantasy-Obsessed-Edition-Branding-UIUX" target="_blank" rel="noopener" data-cursor="view" data-spec="card / 05">
+            <div class="card__media"><img src="assets/work/ff.webp" width="808" height="632" loading="lazy" alt="Final Fantasy Obsessed Edition logo with a red sword through white lettering on black"></div>
+            <div class="card__info">
+              <span class="card__no">05</span>
+              <div class="card__text">
+                <h3 class="card__title">Final Fantasy: Obsessed Edition</h3>
+                <p class="card__desc">A 90s classic given a modern look without losing its retro feel. A sword-struck logo, in-game menus, a publisher website, posters and console packaging.</p>
+              </div>
+              <ul class="card__tags"><li>Branding</li><li>Game UI</li><li>Posters</li><li>2022</li><li>Team project</li></ul>
+            </div>
+          </a>
+
+          <div class="work__outro">
+            <p class="label">That’s the shortlist</p>
+            <a class="orb" href="https://www.behance.net/adarshbhatt" target="_blank" rel="noopener" data-magnetic data-cursor="link">
+              <span>All projects<br>on Behance ↗</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="work__hud" aria-hidden="true">
+          <span class="work__count"><b data-work-index>01</b> / 05</span>
+          <span class="work__bar"><i data-work-bar></i></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ARCHIVE ============ -->
+    <section class="archive t-dark" id="archive" aria-labelledby="archive-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="label" data-reveal>(02) More work</p>
+          <h2 class="display display--md" id="archive-title" data-reveal data-spec="h2 · Bricolage 800">Logos, print <em>&amp; play</em></h2>
+        </div>
+
+        <ul class="rows">
+          <li data-reveal><a class="row" href="https://www.behance.net/gallery/251802291/FRESHERS-Chrome-Logo-Concepts" target="_blank" rel="noopener">
+            <span class="row__no">06</span><span class="row__title">Freshers</span><span class="row__kind">Chrome logo study in 3D and motion · 2026</span>
+            <img class="row__thumb" src="assets/work/freshers.webp" width="808" height="632" loading="lazy" alt="Chrome-effect Freshers lettering on black"><span class="row__arrow" aria-hidden="true">↗</span></a></li>
+          <li data-reveal><a class="row" href="https://www.behance.net/gallery/218597501/Anthem-Music-Mag-Design" target="_blank" rel="noopener">
+            <span class="row__no">07</span><span class="row__title">Anthem</span><span class="row__kind">Music magazine covers · 2025</span>
+            <img class="row__thumb" src="assets/work/anthem.webp" width="808" height="632" loading="lazy" alt="Anthem music magazine covers in red and black"><span class="row__arrow" aria-hidden="true">↗</span></a></li>
+          <li data-reveal><a class="row" href="https://www.behance.net/gallery/219000427/the-room-deziner" target="_blank" rel="noopener">
+            <span class="row__no">08</span><span class="row__title">The Room</span><span class="row__kind">Short film, shot on iPhone · 2025</span>
+            <img class="row__thumb" src="assets/work/room.webp" width="808" height="632" loading="lazy" alt="Title card reading the room in typewriter lettering"><span class="row__arrow" aria-hidden="true">↗</span></a></li>
+          <li data-reveal><a class="row" href="https://www.behance.net/gallery/218592521/Light-Bulb-Packaging-Prototype" target="_blank" rel="noopener">
+            <span class="row__no">09</span><span class="row__title">Light Bulb</span><span class="row__kind">Cardboard packaging prototype · 2025</span>
+            <img class="row__thumb" src="assets/work/bulb.webp" width="808" height="632" loading="lazy" alt="Light bulb box packaging with its dieline drawing"><span class="row__arrow" aria-hidden="true">↗</span></a></li>
+          <li data-reveal><a class="row" href="https://www.behance.net/gallery/182696421/STELLAR" target="_blank" rel="noopener">
+            <span class="row__no">10</span><span class="row__title">Stellar</span><span class="row__kind">Sneaker ad posters · 2023</span>
+            <img class="row__thumb" src="assets/work/stellar.webp" width="808" height="632" loading="lazy" alt="Two Trey sneaker poster in black, white and red"><span class="row__arrow" aria-hidden="true">↗</span></a></li>
+          <li data-reveal><a class="row" href="https://www.behance.net/gallery/200402301/2024-Social-Media-Banner" target="_blank" rel="noopener">
+            <span class="row__no">11</span><span class="row__title">2024</span><span class="row__kind">Instagram banner for the Sports Council · 2024</span>
+            <img class="row__thumb" src="assets/work/banner.webp" width="808" height="632" loading="lazy" alt="Glowing 2024 lettering on a black background"><span class="row__arrow" aria-hidden="true">↗</span></a></li>
+          <li data-reveal><a class="row" href="https://www.behance.net/gallery/166191231/Albert-Einstein-Vector-Art" target="_blank" rel="noopener">
+            <span class="row__no">12</span><span class="row__title">Albert Einstein</span><span class="row__kind">Vector portrait in Illustrator · 2023</span>
+            <img class="row__thumb" src="assets/work/einstein.webp" width="808" height="632" loading="lazy" alt="Vector portrait of Albert Einstein on blue"><span class="row__arrow" aria-hidden="true">↗</span></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="about t-light" id="about" aria-labelledby="about-title">
+      <div class="wrap">
+        <p class="label" data-reveal>(03) About</p>
+        <h2 class="sr-only" id="about-title">About</h2>
+
+        <p class="statement" data-scrub data-spec="p · statement">I’m a designer who likes to know how things work. I start with the people who will use a product, keep the interface clear and calm, and care about the small details. I also write code, so what I design can actually be built.</p>
+
+        <div class="about__grid">
+          <figure class="about__photos" data-reveal data-spec="figure · 4:5">
+            <div class="about__photo about__photo--main"><img src="assets/about/gallery.webp" width="960" height="1200" loading="lazy" alt="Adarsh standing in a dim gallery, looking at framed drawings on the wall"></div>
+            <div class="about__photo about__photo--face"><img src="assets/about/portrait.webp" width="400" height="500" loading="lazy" alt="Adarsh Bhatt, smiling"></div>
+            <figcaption>Off the clock, usually looking at someone else’s work.</figcaption>
+          </figure>
+
+          <div class="about__side">
+            <dl class="facts" data-reveal>
+              <div><dt>Studying</dt><dd>B.Tech, Computer Science &amp; Design<br>IIIT Delhi, 2023 – 2027</dd></div>
+              <div><dt>Based in</dt><dd>New Delhi, India</dd></div>
+              <div><dt>Recently</dt><dd>Design Intern (UI/UX &amp; Branding) at Nuumx.ai</dd></div>
+              <div><dt>Off-screen</dt><dd>Basketball, music, the gym</dd></div>
+            </dl>
+
+            <ul class="stats">
+              <li data-reveal data-spec="stat"><b data-count="12">12</b><span>projects on Behance</span></li>
+              <li data-reveal style="--d:.08s" data-spec="stat"><b data-count="5">5</b><span>design awards</span></li>
+              <li data-reveal style="--d:.16s" data-spec="stat"><b data-count="2020" data-count-plain>2020</b><span>joined Behance</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="toolkit">
+          <div class="toolkit__head">
+            <h3 class="display display--sm" data-reveal data-spec="h3 · Bricolage 800">Tool<em>kit</em></h3>
+            <p class="toolkit__hint" data-reveal>Drag, throw, stack. Yes, the ball bounces.</p>
+          </div>
+
+          <div class="pit" data-cursor="drag" role="group" aria-label="Tools and skills">
+            <span class="chip chip--blue">Figma</span>
+            <span class="chip chip--blue">Illustrator</span>
+            <span class="chip chip--blue">Photoshop</span>
+            <span class="chip chip--blue">After Effects</span>
+            <span class="chip chip--blue">Premiere Pro</span>
+            <span class="chip chip--blue">Blender</span>
+            <span class="chip">UI/UX Design</span>
+            <span class="chip">Branding</span>
+            <span class="chip">Logo Design</span>
+            <span class="chip">Typography</span>
+            <span class="chip">Mockups</span>
+            <span class="chip">Motion Graphics</span>
+            <span class="chip">Video Editing</span>
+            <span class="chip chip--line">JavaScript</span>
+            <span class="chip chip--line">React</span>
+            <span class="chip chip--line">Node.js</span>
+            <span class="chip chip--line">Python</span>
+            <span class="chip chip--line">C++</span>
+            <span class="chip chip--line">Java</span>
+            <span class="chip chip--line">SQL</span>
+            <span class="chip chip--ball" aria-hidden="true">
+              <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="31" fill="#F26A1B"/><path d="M32 1v62M1 32h62M10 10c9 6 14 13 14 22s-5 16-14 22M54 10c-9 6-14 13-14 22s5 16 14 22" fill="none" stroke="#1b0d05" stroke-width="2.2"/></svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section class="exp t-dark" id="experience" aria-labelledby="exp-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="label" data-reveal>(04) Experience</p>
+          <h2 class="display display--md" id="exp-title" data-reveal data-spec="h2 · Bricolage 800">Where I’ve <em>worked</em></h2>
+        </div>
+
+        <ol class="timeline">
+          <li class="job" data-reveal>
+            <span class="job__date">Aug 2025 – Feb 2026</span>
+            <div class="job__main"><h3>Design Intern, UI/UX &amp; Branding</h3><p class="job__org">Nuumx.ai</p></div>
+            <p class="job__desc">Logos, corporate stationery and social content to brand guidelines. Reviewed the website and proposed UI/UX improvements for clarity and accessibility. Made promotional reels and motion graphics.</p>
+          </li>
+          <li class="job" data-reveal>
+            <span class="job__date">Apr – Jun 2025</span>
+            <div class="job__main"><h3>Design Team</h3><p class="job__org">Summer Camp 2025, IIIT Delhi</p></div>
+            <p class="job__desc"></p>
+          </li>
+          <li class="job" data-reveal>
+            <span class="job__date">Jan 2025</span>
+            <div class="job__main"><h3>Core Team Member</h3><p class="job__org">1Pixel Design Conference 2025</p></div>
+            <p class="job__desc"></p>
+          </li>
+          <li class="job" data-reveal>
+            <span class="job__date">Dec 2024 – Apr 2025</span>
+            <div class="job__main"><h3>Executive Committee, Design Team</h3><p class="job__org">TEDxIIITD</p></div>
+            <p class="job__desc">Mail banners, reel graphics and merchandise for the event.</p>
+          </li>
+          <li class="job" data-reveal>
+            <span class="job__date">2024</span>
+            <div class="job__main"><h3>Design Summer School</h3><p class="job__org">IIIT Delhi</p></div>
+            <p class="job__desc">Game design, Blender, XR user experience and augmented reality app development.</p>
+          </li>
+          <li class="job" data-reveal>
+            <span class="job__date">2024</span>
+            <div class="job__main"><h3>Creatives</h3><p class="job__org">Odyssey, IIIT Delhi</p></div>
+            <p class="job__desc">Orchestrated the DesignHeist event for the campus design community.</p>
+          </li>
+          <li class="job" data-reveal>
+            <span class="job__date">Jul 2023 – Aug 2024</span>
+            <div class="job__main"><h3>Organising Committee, Design Team</h3><p class="job__org">Esya, IIIT Delhi</p></div>
+            <p class="job__desc">Event posters and promotions for the fest.</p>
+          </li>
+          <li class="job" data-reveal>
+            <span class="job__date">Sep 2023 – Apr 2024</span>
+            <div class="job__main"><h3>Council Member, Design Team</h3><p class="job__org">Sports Council, IIIT Delhi</p></div>
+            <p class="job__desc">Posters and social media for sports events.</p>
+          </li>
+        </ol>
+
+        <div class="awards">
+          <p class="label" data-reveal>Awards</p>
+          <ul class="awards__grid">
+            <li class="award" data-reveal data-spec="award"><b>1<sup>st</sup></b><span>Designathon</span><small>Robotronics 2021</small></li>
+            <li class="award" data-reveal style="--d:.06s" data-spec="award"><b>1<sup>st</sup></b><span>Design.apk</span><small>Geek-A-Hertz 2021</small></li>
+            <li class="award" data-reveal style="--d:.12s" data-spec="award"><b>2<sup>nd</sup></b><span>Graphic Design</span><small>Caritas 2020</small></li>
+            <li class="award" data-reveal style="--d:.18s" data-spec="award"><b>3<sup>rd</sup></b><span>Designathon</span><small>Code Warriors 2021</small></li>
+            <li class="award" data-reveal style="--d:.24s" data-spec="award"><b>3<sup>rd</sup></b><span>Digital Art</span><small>Code Warriors 2021</small></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ CONTACT ============ -->
+  <footer class="contact t-blue" id="contact" aria-labelledby="contact-title">
+    <div class="wrap">
+      <p class="label" data-reveal>(05) Contact</p>
+      <h2 class="contact__title" id="contact-title" data-reveal data-spec="h2 · Bricolage 800">Let’s <em>talk</em></h2>
+
+      <div class="contact__grid">
+        <div class="contact__side">
+          <p class="contact__lede" data-reveal>Open to freelance projects and internships in UI/UX and brand design. Write to me here, or email me directly.</p>
+          <div class="contact__mail" data-reveal>
+            <a class="mail" href="mailto:adi.bhatt2004@gmail.com" data-cursor="link">adi.bhatt2004@gmail.com</a>
+            <button class="copy" type="button" data-copy="adi.bhatt2004@gmail.com">Copy address</button>
+          </div>
+          <ul class="socials">
+            <li><a href="https://www.behance.net/adarshbhatt" target="_blank" rel="noopener" data-magnetic>Behance <span aria-hidden="true">↗</span></a></li>
+            <li><a href="https://www.linkedin.com/in/adarsh-bhatt-026078219/" target="_blank" rel="noopener" data-magnetic>LinkedIn <span aria-hidden="true">↗</span></a></li>
+            <li><a href="https://github.com/Bakachan04" target="_blank" rel="noopener" data-magnetic>GitHub <span aria-hidden="true">↗</span></a></li>
+          </ul>
+        </div>
+
+        <!-- Messages go through Web3Forms. Paste the access key from web3forms.com into data-access-key.
+             While it is empty, the form opens the visitor's email app with the message filled in. -->
+        <form class="form" id="contact-form" data-reveal data-spec="form"
+              data-access-key="" data-to="adi.bhatt2004@gmail.com">
+          <div class="field">
+            <label for="cf-name">Your name</label>
+            <input id="cf-name" name="name" type="text" autocomplete="name" required maxlength="100">
+          </div>
+          <div class="field">
+            <label for="cf-email">Your email</label>
+            <input id="cf-email" name="email" type="email" autocomplete="email" required maxlength="160" spellcheck="false">
+          </div>
+          <div class="field">
+            <label for="cf-message">Message</label>
+            <textarea id="cf-message" name="message" rows="4" required maxlength="4000"></textarea>
+          </div>
+          <input class="form__trap" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <div class="form__foot">
+            <button class="form__send" type="submit" data-magnetic>Send message <span aria-hidden="true">→</span></button>
+            <p class="form__status" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+      </div>
+
+      <div class="foot">
+        <span>© 2026 Adarsh Bhatt</span>
+        <span>New Delhi, <span data-clock>--:--</span> IST</span>
+        <a href="#top">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Hover preview for the archive list, and the custom cursor -->
+  <div class="preview" aria-hidden="true"></div>
+  <div class="cursor" aria-hidden="true"><span class="cursor__label"></span></div>
+  <div class="toast" role="status" aria-live="polite"></div>
+
+  <script src="assets/vendor/matter.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
