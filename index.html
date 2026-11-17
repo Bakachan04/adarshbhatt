@@ -7,7 +7,7 @@
   <meta name="description" content="Portfolio of Adarsh Bhatt, a UI/UX and brand designer studying Computer Science & Design at IIIT Delhi.">
   <meta name="theme-color" content="#0A0A0B">
   <meta property="og:title" content="Adarsh Bhatt — UI/UX & Brand Designer">
-  <meta property="og:description" content="Design student at IIIT Delhi. Interfaces, brands and the code behind them.">
+  <meta property="og:description" content="Student at IIIT Delhi, studying Computer Science & Design. Interfaces, brands and the code behind them.">
   <meta property="og:type" content="website">
   <!-- If the site moves to another address, update these three URLs. -->
   <link rel="canonical" href="https://adarshbhatt.pages.dev/">
@@ -40,7 +40,7 @@
 
   <!-- ============ NAV ============ -->
   <nav class="nav" aria-label="Primary">
-    <a class="nav__logo pill" href="#top" aria-label="Adarsh Bhatt, back to top" data-magnetic>AB<span>®</span></a>
+    <a class="nav__logo pill" href="#top" aria-label="Adarsh Bhatt, back to top" data-magnetic>AB</a>
 
     <div class="nav__links pill">
       <a href="#work">Work</a>
@@ -70,10 +70,8 @@
   <header class="hero" id="top">
     <div class="hero__layer hero__layer--surface is-solid">
       <div class="hero__meta">
-        <span>Portfolio — 2026</span>
         <span class="hero__hint hero__hint--fine">Move the lens · hold to X-ray</span>
         <span class="hero__hint hero__hint--coarse">Tap anywhere to move the lens</span>
-        <span class="hero__meta-right">UI/UX · Branding · Motion · Front-end</span>
       </div>
 
       <h1 class="hero__name" aria-label="Adarsh Bhatt">
@@ -85,11 +83,7 @@
       </h1>
 
       <div class="hero__foot">
-        <p class="hero__intro">Design student at IIIT Delhi, studying Computer Science &amp; Design. I make interfaces that are clear and easy to use, then build them.</p>
-        <p class="hero__status">
-          <span class="dot" aria-hidden="true"></span>Available for freelance
-          <span class="hero__place">New Delhi, <span data-clock>--:--</span> IST</span>
-        </p>
+        <p class="hero__intro">Student at IIIT Delhi, studying Computer Science &amp; Design. I make interfaces that are clear and easy to use.</p>
         <a class="hero__scroll" href="#work">Scroll <span aria-hidden="true">↓</span></a>
       </div>
     </div>
@@ -117,11 +111,16 @@
           <div class="work__intro">
             <p class="label">(01) Selected work</p>
             <h2 class="display" id="work-title" data-spec="h2 · Bricolage 800">Selected <em>work</em></h2>
-            <p class="work__lede">Three apps, seven book covers and one game, from research to final screens. Each opens as a full case study on Behance.</p>
+            <p class="work__lede" data-set="design">Three apps, seven book covers and one game, from research to final screens. Each opens as a full case study on Behance.</p>
+            <p class="work__lede" data-set="code">The code side: a live event website, a factory scheduler built at a hackathon, and the Bachat AI app. Each opens on GitHub.</p>
+            <button class="work__switch" type="button" data-mode-switch>
+              <span data-set="design">Prefer code? See it in <b>&lt;/&gt; Dev</b> →</span>
+              <span data-set="code">Back to the <b>design work</b> →</span>
+            </button>
             <p class="work__cue" aria-hidden="true">Keep scrolling <span>→</span></p>
           </div>
 
-          <a class="card" href="https://www.behance.net/gallery/252605833/Bachat-AI-UIUX-Branding" target="_blank" rel="noopener" data-cursor="view" data-spec="card / 01">
+          <a class="card" data-set="design" href="https://www.behance.net/gallery/252605833/Bachat-AI-UIUX-Branding" target="_blank" rel="noopener" data-cursor="view" data-spec="card / 01">
             <div class="card__media"><img src="assets/work/bachat.webp" width="808" height="632" alt="Bachat AI budgeting app home screen on a phone held out against a blue background"></div>
             <div class="card__info">
               <span class="card__no">01</span>
@@ -133,7 +132,7 @@
             </div>
           </a>
 
-          <a class="card" href="https://www.behance.net/gallery/232119185/Bites-Branding-UIUX" target="_blank" rel="noopener" data-cursor="view" data-spec="card / 02">
+          <a class="card" data-set="design" href="https://www.behance.net/gallery/232119185/Bites-Branding-UIUX" target="_blank" rel="noopener" data-cursor="view" data-spec="card / 02">
             <div class="card__media"><img src="assets/work/bites.webp" width="808" height="632" loading="lazy" alt="Bites food delivery app on a phone resting on concrete, with the Bites wordmark behind it"></div>
             <div class="card__info">
               <span class="card__no">02</span>
@@ -145,7 +144,7 @@
             </div>
           </a>
 
-          <a class="card" href="https://www.behance.net/gallery/202674075/Eduvid-Branding-UIUX" target="_blank" rel="noopener" data-cursor="view" data-spec="card / 03">
+          <a class="card" data-set="design" href="https://www.behance.net/gallery/202674075/Eduvid-Branding-UIUX" target="_blank" rel="noopener" data-cursor="view" data-spec="card / 03">
             <div class="card__media"><img src="assets/work/eduvid.webp" width="808" height="632" loading="lazy" alt="Eduvid splash screen with a yellow and white logo on a dark phone mockup"></div>
             <div class="card__info">
               <span class="card__no">03</span>
@@ -157,7 +156,7 @@
             </div>
           </a>
 
-          <a class="card" href="https://www.behance.net/gallery/124344065/Harry-Potter-Design-Revamp-UIUX-and-Video" target="_blank" rel="noopener" data-cursor="view" data-spec="card / 04">
+          <a class="card" data-set="design" href="https://www.behance.net/gallery/124344065/Harry-Potter-Design-Revamp-UIUX-and-Video" target="_blank" rel="noopener" data-cursor="view" data-spec="card / 04">
             <div class="card__media"><img src="assets/work/harry.webp" width="808" height="632" loading="lazy" alt="Redesigned coral-red Harry Potter and the Philosopher's Stone book cover held open"></div>
             <div class="card__info">
               <span class="card__no">04</span>
@@ -169,7 +168,7 @@
             </div>
           </a>
 
-          <a class="card" href="https://www.behance.net/gallery/156835109/Final-Fantasy-Obsessed-Edition-Branding-UIUX" target="_blank" rel="noopener" data-cursor="view" data-spec="card / 05">
+          <a class="card" data-set="design" href="https://www.behance.net/gallery/156835109/Final-Fantasy-Obsessed-Edition-Branding-UIUX" target="_blank" rel="noopener" data-cursor="view" data-spec="card / 05">
             <div class="card__media"><img src="assets/work/ff.webp" width="808" height="632" loading="lazy" alt="Final Fantasy Obsessed Edition logo with a red sword through white lettering on black"></div>
             <div class="card__info">
               <span class="card__no">05</span>
@@ -181,16 +180,56 @@
             </div>
           </a>
 
+          <!-- GitHub projects: shown instead of the Behance cards in Dev mode -->
+          <article class="card card--code" data-set="code" data-cursor="code" data-spec="repo / 01">
+            <div class="card__media"><img src="assets/code/dss.webp" width="808" height="632" loading="lazy" alt="Design Summer School 2026 website: large white headline on a dark gradient with the workshop dates"></div>
+            <div class="card__info">
+              <span class="card__no">01</span>
+              <div class="card__text">
+                <h3 class="card__title"><a class="card__link" href="https://github.com/Bakachan04/DSS2026" target="_blank" rel="noopener">Design Summer School 2026</a></h3>
+                <p class="card__desc">The official website for IIIT Delhi’s Design Summer School, built solo without a framework. Light and dark themes, a custom loader and every asset served locally.</p>
+                <a class="card__live" href="https://dss2026.iiitd.edu.in/" target="_blank" rel="noopener" data-cursor="link">dss2026.iiitd.edu.in ↗</a>
+              </div>
+              <ul class="card__tags"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>2026</li></ul>
+            </div>
+          </article>
+
+          <article class="card card--code" data-set="code" data-cursor="code" data-spec="repo / 02">
+            <div class="card__media"><img src="assets/code/replanner.webp" width="808" height="632" loading="lazy" alt="Re-Planner dashboard: KPI row above a Gantt chart of jobs across eight factory machines, with all rule checks passed"></div>
+            <div class="card__info">
+              <span class="card__no">02</span>
+              <div class="card__text">
+                <h3 class="card__title"><a class="card__link" href="https://github.com/Bakachan04/hcl-hackathon" target="_blank" rel="noopener">Production Re-Planner</a></h3>
+                <p class="card__desc">Built in one day at an HCLTech hackathon. A CP-SAT solver schedules a factory and re-plans around breakdowns and rush orders. I wrote the solver, re-planning and API.</p>
+              </div>
+              <ul class="card__tags"><li>Python</li><li>OR-Tools</li><li>FastAPI</li><li>LangGraph</li><li>2026</li><li>Team of 3</li></ul>
+            </div>
+          </article>
+
+          <article class="card card--code" data-set="code" data-cursor="code" data-spec="repo / 03">
+            <div class="card__media"><img src="assets/code/bachat-app.webp" width="808" height="632" loading="lazy" alt="Grid of Bachat AI app screens: home, budgets, insights, alerts, sign-in and chat"></div>
+            <div class="card__info">
+              <span class="card__no">03</span>
+              <div class="card__text">
+                <h3 class="card__title"><a class="card__link" href="https://github.com/dheeraj23195/bachat-ai" target="_blank" rel="noopener">Bachat AI app</a></h3>
+                <p class="card__desc">The budgeting app from the Behance case study, built in React Native. A model sorts expenses into categories, with CSV import, budgets, alerts and biometric lock.</p>
+              </div>
+              <ul class="card__tags"><li>TypeScript</li><li>React Native</li><li>Expo</li><li>2025</li><li>Team of 2</li></ul>
+            </div>
+          </article>
+
           <div class="work__outro">
-            <p class="label">That’s the shortlist</p>
-            <a class="orb" href="https://www.behance.net/adarshbhatt" target="_blank" rel="noopener" data-magnetic data-cursor="link">
+            <a class="orb" data-set="design" href="https://www.behance.net/adarshbhatt" target="_blank" rel="noopener" data-magnetic data-cursor="link">
               <span>All projects<br>on Behance ↗</span>
+            </a>
+            <a class="orb" data-set="code" href="https://github.com/Bakachan04" target="_blank" rel="noopener" data-magnetic data-cursor="link">
+              <span>More code<br>on GitHub ↗</span>
             </a>
           </div>
         </div>
 
         <div class="work__hud" aria-hidden="true">
-          <span class="work__count"><b data-work-index>01</b> / 05</span>
+          <span class="work__count"><b data-work-index>01</b> / <span data-work-total>05</span></span>
           <span class="work__bar"><i data-work-bar></i></span>
         </div>
       </div>
@@ -241,8 +280,6 @@
         <div class="about__grid">
           <figure class="about__photos" data-reveal data-spec="figure · 4:5">
             <div class="about__photo about__photo--main"><img src="assets/about/gallery.webp" width="960" height="1200" loading="lazy" alt="Adarsh standing in a dim gallery, looking at framed drawings on the wall"></div>
-            <div class="about__photo about__photo--face"><img src="assets/about/portrait.webp" width="600" height="900" loading="lazy" alt="Adarsh Bhatt smiling at a restaurant table, arms folded, in a grey hoodie"></div>
-            <figcaption>Off the clock, usually looking at someone else’s work.</figcaption>
           </figure>
 
           <div class="about__side">
@@ -250,7 +287,7 @@
               <div><dt>Studying</dt><dd>B.Tech, Computer Science &amp; Design<br>IIIT Delhi, 2023 – 2027</dd></div>
               <div><dt>Based in</dt><dd>New Delhi, India</dd></div>
               <div><dt>Recently</dt><dd>Design Intern (UI/UX &amp; Branding) at Nuumx.ai</dd></div>
-              <div><dt>Off-screen</dt><dd>Basketball, music, the gym</dd></div>
+              <div><dt>Off-screen</dt><dd>Basketball, music, gym</dd></div>
             </dl>
 
             <ul class="stats">
@@ -264,7 +301,7 @@
         <div class="toolkit">
           <div class="toolkit__head">
             <h3 class="display display--sm" data-reveal data-spec="h3 · Bricolage 800">Tool<em>kit</em></h3>
-            <p class="toolkit__hint" data-reveal>Drag, throw, stack. Yes, the ball bounces.</p>
+            <p class="toolkit__hint" data-reveal>Drag and throw them.</p>
           </div>
 
           <div class="pit" data-cursor="drag" role="group" aria-label="Tools and skills">
@@ -407,7 +444,6 @@
 
       <div class="foot">
         <span>© 2026 Adarsh Bhatt</span>
-        <span>New Delhi, <span data-clock>--:--</span> IST</span>
         <a href="#top">Back to top ↑</a>
       </div>
     </div>

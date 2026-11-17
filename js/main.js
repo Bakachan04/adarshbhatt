@@ -202,26 +202,15 @@
   }
 
   /* ------------------------------------------------------------------ */
-  /* Clock (New Delhi)                                                   */
-  /* ------------------------------------------------------------------ */
-  function initClock() {
-    let fmt;
-    try { fmt = new Intl.DateTimeFormat('en-GB', { timeZone: 'Asia/Kolkata', hour: '2-digit', minute: '2-digit' }); }
-    catch (e) { return; }
-    const tick = () => { const v = fmt.format(new Date()); $$('[data-clock]').forEach((el) => { el.textContent = v; }); };
-    tick(); setInterval(tick, 15000);
-  }
-
-  /* ------------------------------------------------------------------ */
   /* Custom cursor + magnetic elements                                   */
   /* ------------------------------------------------------------------ */
   function initCursor() {
     const el = $('.cursor');
     if (!el || !finePointer || reduceMotion) return;
     const label = $('.cursor__label', el);
-    const pos = { x: pointer.x, y: pointer.y };
-    const labels = { view: 'View ↗', drag: 'Drag' };
+    const labels = { view: 'View ↗', drag: 'Drag', code: 'GitHub ↗' };
     let state = '';
+    let down = false, press = 1; // press shrinks the cursor in place while the button is held
 
     function setState(next) {
       if (next === state) return;
@@ -231,11 +220,12 @@
     }
 
     addEventListener('pointermove', (e) => {
-      if (!root.classList.contains('has-cursor')) { root.classList.add('has-cursor'); pos.x = e.clientX; pos.y = e.clientY; }
+      if (!root.classList.contains('has-cursor')) root.classList.add('has-cursor');
       evaluate(e.target instanceof Element ? e.target : null);
     }, { passive: true });
-    addEventListener('pointerdown', () => el.classList.add('is-down'));
-    addEventListener('pointerup', () => el.classList.remove('is-down'));
+    addEventListener('pointerdown', () => { down = true; });
+    addEventListener('pointerup', () => { down = false; });
+    addEventListener('pointercancel', () => { down = false; });
     root.addEventListener('mouseleave', () => setState('hidden'));
 
     function evaluate(t) {
@@ -249,9 +239,11 @@
 
     let seenY = scrollY;
     onFrame(() => {
-      pos.x = lerp(pos.x, pointer.x, 0.32);
-      pos.y = lerp(pos.y, pointer.y, 0.32);
-      el.style.transform = `translate(${pos.x}px,${pos.y}px)`;
+      // Sit exactly on the real pointer (no easing lag), so what you click is what the cursor is over.
+      // The press scale lives inside this same transform: as a separate CSS `scale` it was applied
+      // after the translate and pulled the cursor towards the page's top-left corner on every click.
+      press = lerp(press, down ? 0.82 : 1, 0.35);
+      el.style.transform = `translate(${pointer.x}px,${pointer.y}px) scale(${press.toFixed(3)})`;
       // The page can scroll under a still cursor, so re-check what it is over.
       if (scroll.y !== seenY && pointer.seen) { seenY = scroll.y; evaluate(document.elementFromPoint(pointer.x, pointer.y)); }
     });
@@ -383,18 +375,24 @@
     const section = $('.work');
     const track = $('.work__track');
     if (!section || !track) return;
-    const cards = $$('.card', track);
+    // Design mode shows the Behance cards, Dev mode the GitHub ones (CSS hides the other set).
+    const allCards = $$('.card', track);
+    let cards = allCards;
     const idx = $('[data-work-index]');
+    const total = $('[data-work-total]');
     const bar = $('[data-work-bar]');
     const mq = matchMedia('(min-width: 900px) and (min-height: 560px)');
     let enabled = false, distance = 0, x = 0, shown = '';
 
     function measure() {
+      cards = allCards.filter((c) => c.getClientRects().length > 0);
+      if (total) total.textContent = String(cards.length).padStart(2, '0');
+      shown = '';
       const want = mq.matches && !reduceMotion;
       if (want !== enabled) {
         enabled = want;
         section.classList.toggle('is-horizontal', enabled);
-        if (!enabled) { section.style.height = ''; track.style.transform = ''; cards.forEach((c) => c.style.removeProperty('--px')); }
+        if (!enabled) { section.style.height = ''; track.style.transform = ''; allCards.forEach((c) => c.style.removeProperty('--px')); }
       }
       if (!enabled) { section.style.removeProperty('--mh'); return; }
       fitCovers();
@@ -418,11 +416,22 @@
     }
 
     measure();
-    modeListeners.push(() => measure()); // Dev mode swaps the body font, so captions reflow
+    // Switching modes swaps the card set and the body font, so re-measure everything.
+    modeListeners.push(() => measure());
+
+    // "See the code" / "Back to design work" inside the gallery flips the whole page's mode.
+    $$('[data-mode-switch]', section).forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        const r = btn.getBoundingClientRect();
+        toggleMode(e.clientX || r.left + r.width / 2, e.clientY || r.top + r.height / 2);
+      });
+    });
+
     // Keyboard users: bring a focused card into view by scrolling the page to its position.
-    cards.concat($$('.orb', track)).forEach((el) => {
-      el.addEventListener('focus', () => {
-        if (!enabled || !el.matches(':focus-visible')) return;
+    // focusin, because a code card's focusable elements are the links inside it.
+    allCards.concat($$('.orb', track)).forEach((el) => {
+      el.addEventListener('focusin', (e) => {
+        if (!enabled || !e.target.matches(':focus-visible')) return;
         const r = el.getBoundingClientRect();
         const centre = r.left + x + r.width / 2 - innerWidth / 2;
         const top = section.getBoundingClientRect().top + scrollY;
@@ -724,7 +733,7 @@
   /* Boot                                                                */
   /* ------------------------------------------------------------------ */
   const safely = (fn) => { try { fn(); } catch (e) { console.error(e); } };
-  [initHero, initClock, initCursor, initMagnetic, initReveals, initStatement, initCounters,
+  [initHero, initCursor, initMagnetic, initReveals, initStatement, initCounters,
     initNav, initMarquee, initWork, initArchive, initPit, initCopy, initForm].forEach(safely);
   applyMode(getMode());
 

@@ -131,7 +131,6 @@ section, footer.contact, .marquee { background: var(--bg); color: var(--fg); pos
   font-family: var(--font-display); font-weight: 800; font-size: 18px; letter-spacing: -.02em;
   padding: 9px 16px; line-height: 1.2; display: inline-flex; align-items: flex-start; gap: 1px;
 }
-.nav__logo span { font-size: 9px; font-family: var(--font-body); margin-top: 1px; opacity: .7; }
 .nav__links { display: flex; gap: 2px; padding: 5px; }
 .nav__links a { padding: 7px 15px; border-radius: 999px; font-size: 14px; font-weight: 500; transition: background .25s, color .25s; }
 .nav__links a:hover, .nav__links a.is-current { background: #fff; color: var(--black); }
@@ -178,7 +177,7 @@ section, footer.contact, .marquee { background: var(--bg); color: var(--fg); pos
 .hero__layer--under { clip-path: circle(var(--lr, 0px) at var(--lx, 50%) var(--ly, 50%)); will-change: clip-path; }
 
 .hero__meta {
-  display: flex; justify-content: space-between; gap: 16px;
+  display: flex; gap: 16px;
   font-family: var(--font-mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase;
   color: rgba(245,244,240,.6);
 }
@@ -206,16 +205,12 @@ html:not(.js) .hero__hint { display: none; } /* the lens needs JS, so don't adve
 .is-blueprint .hero__name .w--name { color: transparent; -webkit-text-stroke: 1.5px #fff; }
 
 .hero__foot {
-  display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr) auto; align-items: end; gap: 24px;
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: 24px;
   margin-top: clamp(16px, 3vh, 34px); padding-top: clamp(14px, 2.2vh, 22px);
   border-top: 1px solid rgba(255,255,255,.16);
 }
 .is-blueprint .hero__foot { border-top-style: dashed; border-top-color: rgba(255,255,255,.7); }
 .hero__intro { max-width: 46ch; font-size: clamp(15px, 1.25vw, 19px); line-height: 1.42; }
-.hero__status { font-size: 14px; }
-.hero__place { display: block; margin-top: 4px; font-family: var(--font-mono); font-size: 12px; letter-spacing: .04em; opacity: .65; padding-left: 18px; }
-.dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #35E07A; margin-right: 10px; box-shadow: 0 0 0 0 rgba(53,224,122,.6); animation: pulse 2.2s infinite; }
-@keyframes pulse { 70% { box-shadow: 0 0 0 9px rgba(53,224,122,0); } 100% { box-shadow: 0 0 0 0 rgba(53,224,122,0); } }
 .hero__scroll { font-family: var(--font-mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; padding: 8px 0; }
 .hero__scroll span { display: inline-block; animation: nudge 1.8s var(--ease-io) infinite; }
 @keyframes nudge { 50% { transform: translateY(5px); } }
@@ -277,6 +272,30 @@ html:not(.js) .hero__hint { display: none; } /* the lens needs JS, so don't adve
 .card__tags li { font-family: var(--font-mono); font-size: 11px; letter-spacing: .05em; text-transform: uppercase; border: 1px solid var(--line); border-radius: 999px; padding: 4px 10px; }
 
 .work__outro { display: grid; justify-items: start; gap: 22px; }
+
+/* Each mode shows its own set: Behance work in Design mode, GitHub projects in Dev mode */
+:root:not([data-mode="dev"]) [data-set="code"],
+:root[data-mode="dev"] [data-set="design"] { display: none !important; }
+
+.work__switch {
+  justify-self: start; display: inline-flex; gap: 10px; align-items: center; margin-top: 4px;
+  font-family: var(--font-mono); font-size: 12px; letter-spacing: .05em; text-transform: uppercase;
+  border: 1px solid var(--line); border-radius: 999px; padding: 10px 16px; transition: background .25s, color .25s, border-color .25s;
+}
+.work__switch:hover { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.work__switch b { font-weight: 500; }
+
+/* Code cards: the whole card opens GitHub; a second link (live site) sits above that */
+.card__link { position: static; }
+.card__link::after { content: ""; position: absolute; inset: 0; z-index: 1; }
+.card__link:focus-visible { outline: none; }
+.card__link:focus-visible::after { outline: 2px solid var(--accent); outline-offset: 6px; border-radius: 6px; }
+.card__live {
+  position: relative; z-index: 2; display: inline-flex; gap: 6px; margin-top: 10px;
+  font-family: var(--font-mono); font-size: 12px; letter-spacing: .04em;
+  text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px;
+}
+.card__live:hover { text-decoration-thickness: 2px; }
 .orb {
   display: grid; place-items: center; text-align: center;
   width: clamp(180px, 20vw, 260px); aspect-ratio: 1; border-radius: 50%;
@@ -373,19 +392,11 @@ html:not(.js) .hero__hint { display: none; } /* the lens needs JS, so don't adve
 .about__side { display: grid; gap: clamp(36px, 5vw, 72px); }
 
 /* Two photos: a large one, with a small tilted portrait pinned to its corner */
-.about__photos { margin: 0; padding-right: 27%; max-width: 620px; }
+.about__photos { margin: 0; max-width: 460px; }
 .about__photo { overflow: hidden; border-radius: 6px; background: #161618; }
 .about__photo img { width: 100%; height: 100%; object-fit: cover; }
 .about__photo--main { aspect-ratio: 4 / 5; }
-.about__photo--face {
-  position: absolute; right: 0; bottom: 56px; width: 43%; aspect-ratio: 2 / 3;
-  border: 6px solid var(--bg); border-radius: 8px; rotate: 5deg; box-shadow: 0 18px 40px rgba(0,0,0,.28);
-  transition: rotate .6s var(--ease), translate .6s var(--ease);
-}
-.about__photos:hover .about__photo--face { rotate: -3deg; translate: 0 -8px; }
-.about__photos figcaption { margin-top: 14px; font-family: var(--font-mono); font-size: 12px; letter-spacing: .04em; color: var(--muted); }
 :root[data-mode="dev"] .about__photo { background: var(--blue); border-radius: 0; outline: 1px solid #fff; }
-:root[data-mode="dev"] .about__photo--face { border-color: var(--blue); box-shadow: none; }
 :root[data-mode="dev"] .about__photo img { filter: grayscale(1) contrast(1.15); mix-blend-mode: luminosity; }
 .facts > div { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 16px; padding: 16px 0; border-top: 1px solid var(--line); }
 .facts > div:last-child { border-bottom: 1px solid var(--line); }
@@ -519,12 +530,11 @@ html:not(.js) .form { display: none; } /* sending needs JS; the email link still
 }
 .cursor__label { font-family: var(--font-mono); font-size: 11px; letter-spacing: .05em; text-transform: uppercase; color: #fff; opacity: 0; transition: opacity .2s; white-space: nowrap; }
 .cursor[data-state="link"] { width: 54px; height: 54px; margin: -27px 0 0 -27px; }
-.cursor[data-state="view"], .cursor[data-state="drag"] { width: 92px; height: 92px; margin: -46px 0 0 -46px; background: var(--blue); mix-blend-mode: normal; }
-.cursor[data-state="view"] .cursor__label, .cursor[data-state="drag"] .cursor__label { opacity: 1; }
+.cursor[data-state="view"], .cursor[data-state="drag"], .cursor[data-state="code"] { width: 92px; height: 92px; margin: -46px 0 0 -46px; background: var(--blue); mix-blend-mode: normal; }
+.cursor[data-state="view"] .cursor__label, .cursor[data-state="drag"] .cursor__label, .cursor[data-state="code"] .cursor__label { opacity: 1; }
 .cursor[data-state="hidden"] { opacity: 0; }
-.cursor.is-down { transform-origin: center; scale: .82; }
-:root[data-mode="dev"] .cursor[data-state="view"], :root[data-mode="dev"] .cursor[data-state="drag"] { background: #fff; }
-:root[data-mode="dev"] .cursor[data-state="view"] .cursor__label, :root[data-mode="dev"] .cursor[data-state="drag"] .cursor__label { color: var(--blue); }
+:root[data-mode="dev"] .cursor[data-state="view"], :root[data-mode="dev"] .cursor[data-state="drag"], :root[data-mode="dev"] .cursor[data-state="code"] { background: #fff; }
+:root[data-mode="dev"] .cursor[data-state="view"] .cursor__label, :root[data-mode="dev"] .cursor[data-state="drag"] .cursor__label, :root[data-mode="dev"] .cursor[data-state="code"] .cursor__label { color: var(--blue); }
 
 /* ---------- Toast ---------- */
 .toast { position: fixed; left: 50%; bottom: 26px; z-index: 200; transform: translate(-50%, 30px); opacity: 0; pointer-events: none; background: #fff; color: var(--black); font-family: var(--font-mono); font-size: 12px; letter-spacing: .04em; padding: 11px 16px; border-radius: 999px; box-shadow: 0 10px 40px rgba(0,0,0,.35); transition: opacity .3s, transform .5s var(--ease); white-space: nowrap; }
@@ -550,11 +560,9 @@ html:not(.js) .form { display: none; } /* sending needs JS; the email link still
   .gridlines { grid-template-columns: repeat(4, 1fr); gap: 12px; }
   .gridlines i:nth-child(n+5) { display: none; }
   .hero { height: clamp(520px, 80vh, 700px); height: clamp(520px, 80svh, 700px); }
-  .hero__meta-right, .hero__hint { display: none !important; }
+  .hero__hint { display: none !important; }
   .hero__foot { grid-template-columns: 1fr; gap: 14px; }
   .hero__scroll { display: none; }
-  .hero__status { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 14px; }
-  .hero__place { padding-left: 0; }
   .row { grid-template-columns: 30px minmax(0, 1fr) 76px; gap: 12px; }
   .row__kind { grid-column: 2; grid-row: 2; margin-top: -8px; }
   .row__kind:empty { display: none; }
